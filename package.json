@@ -1,0 +1,22 @@
+{
+  "name": "cs_4273_capstone",
+  "version": "1.0.0",
+  "description": "Twilio OU Health SMS",
+  "main": "sms.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Za-Sing/CS_4273_Capstone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Za-Sing/CS_4273_Capstone/issues"
+  },
+  "homepage": "https://github.com/Za-Sing/CS_4273_Capstone#readme",
+  "dependencies": {
+    "twilio": "^3.74.0"
+  }
+}
