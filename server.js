@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse();
 
-  if (req.body.Body == 'A') {
-    twiml.message('That\'s correct!');
+  if (req.body.Body == 'D') {
+    twiml.message('That is correct!');
   } else {
     twiml.message(
       'That answer is incorrect!'
