@@ -1,0 +1,3 @@
+[ ] Complete question-answer code to use a real question
+[ ] Create build config to start server, listener, and send text
+[ ] Make json dictionary of questions
