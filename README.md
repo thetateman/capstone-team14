@@ -1,4 +1,4 @@
-# CS_4273_Capstone
+# CS_4273_Capstone - Project 4
 
 **To send a message, run ``node sms.js``**
 
