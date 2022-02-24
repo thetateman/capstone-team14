@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Za-Sing/CS_4273_Capstone#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "twilio": "^3.74.0"
   }
 }
