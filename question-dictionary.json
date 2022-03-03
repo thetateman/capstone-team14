@@ -1,0 +1,102 @@
+{
+    "question": [
+        {
+            "name": "question_1",
+            "body": ["A 16-year-old girl presents to the ED after falling in a cheerleading competition. The patient landed on an ",
+                    "outstretched leg after her partner failed to catch her during a stunt, causing the leg to hyperextend at the ",
+                    "knee and dislocate. On exam, you note mild swelling of the knee with joint laxity but no obvious dislocation. ",
+                    "The knee radiograph shows a joint effusion, but no fracture or dislocation. There is fullness in the popliteal fossa, ",
+                    "and you note a diminished dorsalis pedis pulse, an absent posterior tibialis pulse, and cool toes. What is the next step in the management of this patient?"
+                ],
+            "choice-a": "A. Arteriogram",
+            "choice-b": "B. CT angiography",
+            "choice-c": "C. Duplex ultrasound",
+            "choice-d": "D. Emergent vascular surgery consult",
+            "correct-answer": "D",
+            "explanation": ["Knee dislocations can occur with high-energy (MVC, fall from height) and low-energy (minor fall, athletic activity) ",
+                            "mechanisms. All knee dislocations are considered orthopedic emergencies because an associated popliteal artery injury ",
+                            "is present in 33% of cases. It is not uncommon for spontaneous reduction to occur prior to ED presentation. Any grossly ",
+                            "unstable knee after a traumatic injury should be considered a spontaneously reduced dislocation. Absent distal pulses, distal ",
+                            "ischemia, an ankle brachial index (ABI) < 0.8, or an expanding or pulsatile hematoma are hard evidence of a vascular injury and ",
+                            "necessitate emergent surgical consult. Pulse exam is only 80% sensitive for detecting popliteal injuries. A serious arterial ",
+                            "injury may be present despite a warm foot.\nArteriography (A) is the gold standard for diagnosing popliteal artery injuries, including ",
+                            "difficult-to-detect intimal tears. However, in patients with diminished distal pulses, immediate operative exploration is the preferred ",
+                            "course of action. CT angiography (B) has largely supplanted arteriography as the initial test of choice for suspected popliteal artery ",
+                            "injuries, but it has not been studied exclusively in patients with knee dislocations. Despite the ease of obtaining a CT angiogram, patients with ",
+                            "hard signs of vascular injury warrant immediate surgical exploration. Duplex ultrasound (C) has a high sensitivity and specificity but can miss intimal tears"
+                        ]
+        },
+        {
+            "name": "question_2",
+            "body": ["A 17-year-old male restrained driver is transported to the ED after his motor vehicle was struck from behind at a high speed. He arrives in full spinal ",
+                    "precautions. His vital signs are within normal limits. On exam, he has no motor ability distal to T10. There is also a loss of pain and temperature sensation ",
+                    "with preservation of proprioception and vibration. Which of the following cord injuries did this patient most likely sustain?"
+                ],
+            "choice-a": "A. Anterior cord syndrome",
+            "choice-b": "B. Brown-Séquard syndrome",
+            "choice-c": "C. Central cord syndrome",
+            "choice-d": "D. Posterior cord syndrome",
+            "correct-answer": "A",
+            "explanation": ["Incomplete spinal cord injuries are described by four distinct patterns and characterized by variable loss of motor and sensory function. ",
+                            "The anterior cord syndrome is characterized by injury to the anterior two-thirds of the spinal cord. The mechanism of injury is usually a compression ",
+                            "or flexion type with acute cord impingement but may also be caused by vascular injury. Clinically, patients present with loss of pain and temperature ",
+                            "below the level of injury and complete loss of motor function, but they retain proprioception as well as vibratory and deep pressure sensation. ",
+                            "The prognosis for full recovery is poor, with minimal chance of return to meaningful function.\nBrown-Séquard syndrome (B) results in loss of ",
+                            "ipsilateral motor and dorsal column function and contralateral pain and temperature sensation. Central cord syndrome (C) presents clinically with ",
+                            "sensory and motor deficits that are more pronounced in the upper extremities. Posterior cord syndrome (D) is rare and results in loss of proprioception ",
+                            "and vibration, with preserved motor function."
+                        ]
+        },
+        {
+            "name": "question_3",
+            "body": ["A 46-year-old woman presents as a restrained driver who required prolonged extraction from a high-speed motor vehicle collision. ",
+                    "In the ED, her HR is 125 bpm, BP 80/50 mm Hg, RR 22/min, and pulse oximetry 97% on room air. Exam reveals mobility of her right iliac crest and ",
+                    "a large volume of fluid in Morrison pouch on the FAST exam. A chest radiograph is normal. Two large-bore IVs are placed, fluid resuscitation is initiated, ",
+                    "and blood products are ordered. Which of the following is the most appropriate next step in the patient's management?"
+                ],
+            "choice-a": "A. Activation of the interventional radiology suite",
+            "choice-b": "B. CT scan of the abdomen and pelvis",
+            "choice-c": "C. Immediate placement of an external fixation device by an orthopedic surgeon",
+            "choice-d": "D. Transfer to the operating room for laparotomy",
+            "correct-answer": "D",
+            "explanation": ["This patient has sustained blunt abdominal trauma, a management challenge to both emergency medicine physicians and trauma surgeons. ",
+                            "Motor vehicle collisions are the most common cause of blunt abdominal trauma. The spleen is the solid organ most likely to be injured. ",
+                            "In patients who are hemodynamically unstable, the source of bleeding is usually from the abdomen, pelvis, or thorax. Chest and pelvis ",
+                            "radiographs are performed to evaluate for injury to the thorax and pelvis, respectively. A FAST ultrasound is highly sensitive for intraperitoneal ",
+                            "bleeding. This patient is hypotensive and has a positive FAST ultrasound. Consequently, the most appropriate next step is exploratory laparotomy.\n",
+                            "Interventional radiology (A) is a critical component in the management of pelvic injuries with suspected arterial bleeding and hemodynamically stable ",
+                            "liver or spleen injuries that can benefit from angioembolization. However, when hypotension is present with blunt abdominal trauma and free intraperitoneal fluid, ",
+                            "immediate exploratory laparotomy is needed. In some trauma centers, arterial embolization can be performed in the operating room concurrent with exploratory ",
+                            "laparotomy. CT scan of the abdomen and pelvis (B) is appropriate in the normotensive patient or the hypotensive patient who responds to fluid resuscitation ",
+                            "and has a negative FAST exam. Placement of an external fixation device (C) is necessary for patients with disruption of the pelvis, most commonly from an ",
+                            "open-book fracture. However, this procedure should not delay the transfer of the patient to the operating room and can be performed alongside the trauma surgeon."
+                        ]
+        },
+        {
+            "name": "question_4",
+            "body": ["Which of the following fractures is always considered an unstable spinal injury?"
+                ],
+            "choice-a": "A. Burst fracture",
+            "choice-b": "B. Clay shoveler fracture",
+            "choice-c": "C. Flexion teardrop fracture",
+            "choice-d": "D. Simple wedge fracture",
+            "correct-answer": "C",
+            "explanation": ["To assess the stability of spinal injuries below C2, it is helpful to view the spine as consisting of two columns. Alternating vertebral bodies and ",
+                            "intervertebral disks held in alignment by the anterior and posterior longitudinal ligaments form the anterior column. The pedicles, transverse processes, ",
+                            "articulating facets, laminae, and spinous processes form the posterior column, which contains the spinal canal. It is held in alignment by the nuchal ",
+                            "ligament complex (supraspinous, interspinous, and infraspinous ligaments), the capsular ligaments, and the ligamentum flavum. If both columns are disrupted, ",
+                            "the spine will move as two separate pieces, and there is high likelihood of that movement causing or worsening spinal cord injury. If only one column is ",
+                            "disrupted, the other column resists further movement, and the likelihood of a spinal cord injury occurring is less and depends on the strength of the ",
+                            "intact ligaments. A flexion teardrop fracture results when severe flexion forces cause anterior displacement of a wedge-shaped fragment (resembling a teardrop) ",
+                            "of the anteroinferior portion of the involved vertebral body. This fracture involves complete disruption of the ligamentous structures at the level of the ",
+                            "injury. This leads to a highly unstable fracture.\nVertical compression injuries occur in the cervical and lumbar regions, which are capable of straightening ",
+                            "at the time of impact. When forces are applied from either above (skull) or below (pelvis or feet), one or more vertebral body endplates may fracture. ",
+                            "The nucleus pulposus of the intervertebral disk is forced into the vertebral body, which is shattered outward, resulting in a burst fracture (A). ",
+                            "This is a stable fracture because there is no ligamentous disruption. However, fracture fragments may impinge on or penetrate the ventral surface of the spinal ",
+                            "cord and cause an anterior cord syndrome, therefore, it is sometimes considered an unstable fracture. A clay shoveler fracture (B) is an oblique fracture of the ",
+                            "base of the spinous process of one of the lower cervical segments. Because this injury involves only the spinous process, it is stable and not associated with ",
+                            "neurologic involvement. A simple wedge fracture (D) does not involve the posterior column and is, therefore, considered a stable fracture rarely associated with neurologic injury."
+                        ]
+        }
+    ]
+}
