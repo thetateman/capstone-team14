@@ -38,10 +38,10 @@ app.post("/handle_sms", (req, res) => {
     
     
     if (req.body.Body == questionDict['question'][currentQuestion]['correct-answer']) {
-        twiml.message("That is correct!");
+        twiml.message("That is correct!\n\n" + questionDict['question'][currentQuestion]['explanation']);
         correctAnswers++;
     } else {
-        twiml.message("That answer is incorrect!");
+        twiml.message("That answer is incorrect!\n\n" + questionDict['question'][currentQuestion]['explanation']);
     }
     
     res.writeHead(200, { "Content-Type": "text/xml" });
@@ -62,7 +62,8 @@ async function sendQuestions() {
         else {
         client.messages
             .create({
-                body: questionDict['question'][i]['body'],
+                body: questionDict['question'][i]['body'] + "\n\n" + questionDict['question'][i]['choice-a']
+                        + "\n" + questionDict['question'][i]['choice-b'] + "\n" + questionDict['question'][i]['choice-c'] + "\n" + questionDict['question'][i]['choice-d'],
                 from: sourceNumber,
                 to: targetNumber
             })
