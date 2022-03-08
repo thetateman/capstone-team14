@@ -3,33 +3,47 @@ const http = require("http");
 const express = require("express");
 const MessagingResponse = require("twilio").twiml.MessagingResponse;
 const bodyParser = require("body-parser");
+require('dotenv').config()
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const targetNumber = process.env.TARGET_NUMBER;
+const sourceNumber = process.env.SOURCE_NUMBER;
+
+const client = require('twilio')(accountSid, authToken);
 
 // Simple function to read and parse a json document
 function readQuestions(fileName) {
-    fs.readFile(fileName, "utf8", (error, data) => {
-        if (error) {
-            console.log(error);
-            return;
-        }
+    try {
+        const data = fs.readFileSync('question-dictionary.json', 'utf8')
         return JSON.parse(data);
-    });
+    } catch (err) {
+        console.error(err)
+    }
 }
-
-let questionDict = readQuestions("question-dictionary.json");
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/sms", (req, res) => {
-    const twiml = new MessagingResponse();
+const questionDict = readQuestions("question-dictionary.json");
+let waitingForResponse = false;
+let correctAnswers = 0;
+let currentQuestion = 0;
 
-    if (req.body.Body == "D") {
+//Handle user response
+app.post("/handle_sms", (req, res) => {
+    waitingForResponse = false;
+    const twiml = new MessagingResponse();
+    
+    
+    if (req.body.Body == questionDict['question'][currentQuestion]['correct-answer']) {
         twiml.message("That is correct!");
+        correctAnswers++;
     } else {
         twiml.message("That answer is incorrect!");
     }
-
+    
     res.writeHead(200, { "Content-Type": "text/xml" });
     res.end(twiml.toString());
 });
@@ -37,3 +51,27 @@ app.post("/sms", (req, res) => {
 http.createServer(app).listen(1337, () => {
     console.log("Express server listening on port 1337");
 });
+
+// Send questions to user.
+async function sendQuestions() {
+    for(let i=0; i<questionDict['question'].length; i++) {
+        if(waitingForResponse) {
+            i--;
+            console.log("waiting....")
+        }
+        else {
+        client.messages
+            .create({
+                body: questionDict['question'][i]['body'],
+                from: sourceNumber,
+                to: targetNumber
+            })
+            .then(message => console.log(message.sid));
+            currentQuestion = i;
+            waitingForResponse = true;
+        }
+        await new Promise(resolve => setTimeout(resolve, 10000));
+    }
+    console.log(`User answered ${correctAnswers} out of ${questionDict['question'].length} questions correctly.`)
+}
+sendQuestions();

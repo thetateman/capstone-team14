@@ -32,8 +32,7 @@
         },
         {
             "name": "question_4",
-            "body": ["Which of the following fractures is always considered an unstable spinal injury?"
-                ],
+            "body": "Which of the following fractures is always considered an unstable spinal injury?",
             "choice-a": "A. Burst fracture",
             "choice-b": "B. Clay shoveler fracture",
             "choice-c": "C. Flexion teardrop fracture",
