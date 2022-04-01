@@ -25,7 +25,24 @@ function readQuestions(fileName) {
 
 // Twilio initialization
 const app = express();
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+
+// Update question list from Web UI
+app.use('/updateQuestions', (req, res) => {
+    newQuestionList = JSON.stringify(req.body.questions);
+    console.log(newQuestionList);
+    
+    try {
+        fs.writeFileSync('question-dictionary-test.json', newQuestionList, {flag: 'a+'})
+        //file written successfully
+      } catch (err) {
+        console.error(err)
+      }
+    
+   return res.json({"success": "success"});
+});
 // Get question dict and intialize variables
 const questionDict = readQuestions("question-dictionary.json");
 let waitingForResponse = false;
