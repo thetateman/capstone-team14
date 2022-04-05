@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<style>
+<title>Daily Health Questions Admin</title>
+head {
+	background-color: #b3d9ff;
+}
+body {
+	background-color: #b3d9ff;
+}
+::-webkit-scrollbar {
+	width: 14px;
+}
+::-webkit-scrollbar {
+	box-shadow: inset 0 0 5px gray;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #0073e6;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {background-color: #004080;}
+h2 {
+	color: #004080;
+	text-align: center;
+	font-family: verdana;
+	font-size: 32px;
+}
+h4 {
+	color: #0073e6;
+	text-align: center;
+	font-family: verdana;
+	font-size: 20px;
+}
+input {
+	text-align: center;
+	font-family: verdana;
+}
+div {
+	text-align: center;
+}
+select {
+	color: #004080;
+}
+textarea {
+	text-align: left;
+}
+#answerA {
+	text-align: left;
+}
+#answerB {
+	text-align: left;
+}
+#answerC {
+	text-align: left;
+}
+#answerD {
+	text-align: left;
+}
+#sendTime {
+	text-align: right;
+}
+#fileUpload {
+	text-align: left;
+}
+#Submit {
+	border-radius: 8px;
+	background-color: #004080;
+	color: white;
+	font-family: verdana;
+	font-size: 18px;
+	padding: 5px;
+}
+#Submit:hover {background-color: #0073e6;}
+</style>
+<h2>Daily Health Questions Admin</h2>
+</head>
+<body>
+
+<form method="POST">
+	<br>
+    <h4>Enter health question:</h4>
+    <div>
+		<textarea id="question" name="question" rows="20" cols="80" placeholder="Health Question"></textarea>
+	</div><br>
+	
+	<h4>Enter answer choices for health question:</h4>
+    <div>
+		<input id="answerA", name="answerA", size="60", type="text", placeholder="Answer A">
+	</div><br>
+	<div>
+		<input id="answerB", name="answerB", size="60", type="text", placeholder="Answer B">
+	</div><br>
+	<div>
+		<input id="answerC", name="answerC", size="60", type="text", placeholder="Answer C">
+	</div><br>
+	<div>
+		<input id="answerD", name="answerD", size="60", type="text", placeholder="Answer D">
+	</div><br>
+	
+	<h4>Choose health questions to schedule to send out:</h4>
+    <div>
+		<select id="selection" name="selection" size="4" multiple>
+			<option value="firstQuestion"> Question 1</option>
+			<option value="secondQuestion">Question 2</option>
+			<option value="thirdQuestion"> Question 3</option>
+			<option value="fourthQuestion">Question 4</option>
+			<option value="fifthQuestion"> Question 5</option>
+		</select>
+	</div><br>
+	
+	<h4>Choose time to send out health question:</h4>
+    <div>
+		<select id="sendTime" name="sendTime">
+			<option value="7AM">  7:00 AM</option>
+			<option value="8AM">  8:00 AM</option>
+			<option value="9AM">  9:00 AM</option>
+			<option value="10AM">10:00 AM</option>
+			<option value="11AM">11:00 AM</option>
+			<option value="12PM">12:00 PM</option>
+			<option value="1PM">  1:00 PM</option>
+		</select>
+	</div><br>
+	
+	<h4>Upload a file:</h4>
+    <div>
+		<input id="fileUpload", name="fileUpload", size="60", type="text", placeholder="File to upload">
+	</div><br>
+
+    <br><br>
+	<div>
+		<input type="submit", id="Submit", name="Submit">
+	</div>
+	<br>
+</form>
+
+</body>
+</html>
