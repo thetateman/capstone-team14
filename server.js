@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path")
 const http = require("http");
 const express = require("express");
 const MessagingResponse = require("twilio").twiml.MessagingResponse;
@@ -28,10 +29,12 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
+app.use('/admin', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/index.html`));
+});
 // Update question list from Web UI
 app.use('/updateQuestions', (req, res) => {
-    newQuestionList = JSON.stringify(req.body.questions);
+    newQuestionList = JSON.stringify(req.body);
     console.log(newQuestionList);
     
     try {
@@ -40,8 +43,8 @@ app.use('/updateQuestions', (req, res) => {
       } catch (err) {
         console.error(err)
       }
-    
-   return res.json({"success": "success"});
+    res.redirect('/admin');
+    //return res.json({"success": "success"});
 });
 // Get question dict and intialize variables
 const questionDict = readQuestions("question-dictionary.json");
