@@ -40,6 +40,10 @@ input {
 div {
 	text-align: center;
 }
+label {
+	color: #004080;
+	font-family: verdana;
+}
 select {
 	color: #004080;
 }
@@ -63,10 +67,6 @@ textarea {
 }
 #fileUpload {
 	text-align: left;
-}
-#selectAll {
-	color: #004080;
-	font-family: verdana;
 }
 #Submit {
 	border-radius: 8px;
@@ -114,7 +114,8 @@ textarea {
 		</select>		
 	</div>
 	<div><br>
-		<input type="checkbox" id="selectAll" name="selectAll" value="Select All">Select All</input>
+		<input type="checkbox" id="selectAll" name="selectAll" value="Select All">
+		<label for="selectAll"> Select All</label>
 	</div><br>
 	
 	<h4>Choose time to send out health question:</h4>
