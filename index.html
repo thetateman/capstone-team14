@@ -79,10 +79,28 @@ textarea {
 	padding: 5px;
 }
 #Submit:hover {background-color: #0073e6;}
+#Add {
+	border-radius: 7px;
+	background-color: #004080;
+	color: white;
+	font-family: verdana;
+	font-size: 16px;
+	padding: 5px;
+}
+#Add:hover {background-color: #0073e6;}
 </style>
 <h2>Daily Health Questions Admin</h2>
 </head>
 <body>
+
+<form action="http://localhost:1337/updateNumbers" method="POST">
+	<br>
+	<h4>Enter recipient mobile numbers (individually):</h4>
+	<div>
+		<input type="text" id="number" placeholder="Recipient number">
+		<input type="submit" id="Add" name="Add Number" value="Add Number">
+	</div>
+</form>
 
 <form action="http://localhost:1337/updateQuestions" method="POST">
 	<br>
