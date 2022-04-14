@@ -46,6 +46,17 @@ app.use('/updateQuestions', (req, res) => {
     res.redirect('/admin');
     //return res.json({"success": "success"});
 });
+
+var numbers = [targetNumber];
+//Update list of target numbers
+app.use('/updateNumbers', (req, res) => {
+    newNumber = JSON.stringify(req.body).number;
+    console.log(newNumber);
+    numbers.push(newNumber);
+    res.redirect('/admin');
+});
+
+
 // Get question dict and intialize variables
 const questionDict = readQuestions("question-dictionary.json");
 let waitingForResponse = false;
