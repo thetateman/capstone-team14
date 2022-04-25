@@ -59,21 +59,18 @@ app.use('/updateNumbers', (req, res) => {
 
 // Get question dict and intialize variables
 const questionDict = readQuestions("question-dictionary.json");
-let waitingForResponse = false;
-let correctAnswers = 0;
 let currentQuestion = 0;
+const sendTime = questionDict["sendTime"];
 // List of recipient numbers
 var numbers = [targetNumber];
 
 // Handle user response
 app.post("/handle_sms", (req, res) => {
-    waitingForResponse = false;
     const twiml = new MessagingResponse();
 
     // Check if the answer is correct or not
     if (req.body.Body ==questionDict["question"][currentQuestion]["correct-answer"]) {
         twiml.message("That is correct!\n\n" + questionDict["question"][currentQuestion]["explanation"]);
-        correctAnswers++;
     } else {
         twiml.message("That answer is incorrect!\n\n" + questionDict["question"][currentQuestion]["explanation"]);
     }
@@ -92,7 +89,7 @@ async function sendQuestions() {
     // The string input is the time of day to send. The format is minutes, hours. So "30 08" is 8:30 AM 
     // Note that this expects 24 HR time
     let j = 0;
-    var textJob = new cronJob("30 08 * * *",
+    var textJob = new cronJob(sendTime + " * * *",
         function () {
             for (var i = 0; i < numbers.length; i++) {
                 client.messages.create(
