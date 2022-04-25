@@ -116,6 +116,7 @@ textarea {
 <form action="http://localhost:1337/updateNumbers" method="POST">
 	<br>
 	<h4>Enter recipient mobile numbers (individually):</h4>
+	<h4>Please enter in the format: +10000000</h4>
 	<div>
 		<input type="text" id="number" placeholder="Recipient number">
 		<input type="submit" id="Add" name="Add Number" value="Add Number">
@@ -173,13 +174,18 @@ textarea {
 	<h4>Choose time to send out health question:</h4>
     <div>
 		<select id="sendTime" name="sendTime">
-			<option value="7AM">  7:00 AM</option>
-			<option value="8AM">  8:00 AM</option>
-			<option value="9AM">  9:00 AM</option>
-			<option value="10AM">10:00 AM</option>
-			<option value="11AM">11:00 AM</option>
-			<option value="12PM">12:00 PM</option>
-			<option value="1PM">  1:00 PM</option>
+			<option value="00 07">  7:00 AM</option>
+			<option value="30 07">  7:30 AM</option>
+			<option value="00 08">  8:00 AM</option>
+			<option value="30 08">  8:30 AM</option>
+			<option value="00 09">  9:00 AM</option>
+			<option value="30 09">  9:30 AM</option>
+			<option value="00 10">  10:00 AM</option>
+			<option value="30 10">  10:30 AM</option>
+			<option value="00 11">  11:00 AM</option>
+			<option value="30 11">  11:30 AM</option>
+			<option value="00 12">  12:00 PM</option>
+			<option value="30 12">  12:30 PM</option>
 		</select>
 	</div><br>
 	
