@@ -2,10 +2,12 @@
 // Find your Account SID and Auth Token at twilio.com/console
 // and set the environment variables. See http://twil.io/secure
 require('dotenv').config()
-console.log(process.env)
+
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-console.log(authToken)
+const targetNumber = process.env.TARGET_NUMBER;
+const sourceNumber = process.env.SOURCE_NUMBER;
+
 const client = require('twilio')(accountSid, authToken);
 
 client.messages
@@ -15,7 +17,7 @@ client.messages
             'The knee radiograph shows a joint effusion, but no fracture or dislocation. There is fullness in the popliteal fossa, and you note a diminished dorsalis pedis pulse,' +
             'an absent posterior tibialis pulse, and cool toes. What is the next step in the management of this patient? Reply with the letter.' +
             '\n A. Arteriogram \n B. CT angiography \n C. Duplex ultrasound \n D. Emergent vascular surgery consult',
-     from: '+19106599147',
-     to: '+14052064627'
+     from: sourceNumber,
+     to: targetNumber
    })
   .then(message => console.log(message.sid));
