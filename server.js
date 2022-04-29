@@ -49,6 +49,7 @@ app.use('/updateQuestions', (req, res) => {
             "correct-answer": newQuestionList["correctAnswer"],
         }
     );
+    oldQuestionDict["sendTime"] = newQuestionList["sendTime"];
     
     try {
         fs.writeFileSync('question-dictionary.json', JSON.stringify(oldQuestionDict))
@@ -73,7 +74,7 @@ app.use('/updateNumbers', (req, res) => {
 // Get question dict and intialize variables
 const questionDict = readQuestions("question-dictionary.json");
 let currentQuestion = 0;
-const sendTime = questionDict["sendTime"];
+let sendTime = "00 00";
 // List of recipient numbers
 var numbers = [targetNumber];
 
@@ -97,12 +98,13 @@ http.createServer(app).listen(1337, () => {
     console.log("Express server listening on port 1337");
 });
 
+let j = 0;
 // Send questions to user every day at a scheduled time
 async function sendQuestions() {
     // The string input is the time of day to send. The format is minutes, hours. So "30 08" is 8:30 AM 
     // Note that this expects 24 HR time
-    let j = 0;
-    var textJob = new cronJob("15 16 * * *",
+    sendTime = questionDict["sendTime"]
+    var textJob = new cronJob(`${sendTime} * * *`,
         function () {
             for (var i = 0; i < numbers.length; i++) {
                 client.messages.create(
@@ -132,3 +134,5 @@ async function sendQuestions() {
 }
 
 sendQuestions();
+
+
