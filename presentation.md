@@ -6,14 +6,11 @@ marp: true
 ## CS 4273 
 ## 05/09/2022
 
----
-# Twilio SMS Project: Overview
-Server functionality
 
 ---
-# Twilio SMS Project: Administration
-Web GUI
-!("gui.PNG")
+# Quiz Administration
+
+![](gui1.PNG)
 
 
 ---
