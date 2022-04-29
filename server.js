@@ -34,11 +34,24 @@ app.use('/admin', (req, res) => {
 });
 // Update question list from Web UI
 app.use('/updateQuestions', (req, res) => {
-    newQuestionList = JSON.stringify(req.body);
+    let newQuestionList = req.body;
     console.log(newQuestionList);
+
+    let oldQuestionDict = readQuestions("question-dictionary.json");
+
+    oldQuestionDict["question"].push(
+        {
+            "body": newQuestionList["question"],
+            "choice-a": newQuestionList["answerA"],
+            "choice-b": newQuestionList["answerB"],
+            "choice-c": newQuestionList["answerC"],
+            "choice-d": newQuestionList["answerD"],
+            "correct-answer": newQuestionList["correctAnswer"],
+        }
+    );
     
     try {
-        fs.writeFileSync('question-dictionary-test.json', newQuestionList, {flag: 'a+'})
+        fs.writeFileSync('question-dictionary.json', JSON.stringify(oldQuestionDict))
         //file written successfully
       } catch (err) {
         console.error(err)
@@ -89,7 +102,7 @@ async function sendQuestions() {
     // The string input is the time of day to send. The format is minutes, hours. So "30 08" is 8:30 AM 
     // Note that this expects 24 HR time
     let j = 0;
-    var textJob = new cronJob(sendTime + " * * *",
+    var textJob = new cronJob("15 16 * * *",
         function () {
             for (var i = 0; i < numbers.length; i++) {
                 client.messages.create(
